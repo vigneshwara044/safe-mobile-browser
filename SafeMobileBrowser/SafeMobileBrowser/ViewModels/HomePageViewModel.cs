@@ -43,6 +43,8 @@ namespace SafeMobileBrowser.ViewModels
 
         public ICommand AddressBarUnfocusCommand { get; set; }
 
+        public ICommand PullToReloadCommand => ReloadCommand;
+
         private bool _canGoBack;
 
         public bool CanGoBack

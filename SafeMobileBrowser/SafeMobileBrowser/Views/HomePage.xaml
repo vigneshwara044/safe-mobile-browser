@@ -9,6 +9,7 @@
              BackgroundColor="{DynamicResource ContentPageBackgroundColor}"
              xmlns:xamEffect="clr-namespace:XamEffects;assembly=XamEffects"
              xmlns:icons="clr-namespace:SafeMobileBrowser.Models"
+             xmlns:pulltorefresh="clr-namespace:Refractored.XamForms.PullToRefresh;assembly=Refractored.XamForms.PullToRefresh"
              Padding="0">
 
     <NavigationPage.TitleView>
@@ -98,8 +99,12 @@
             <Grid VerticalOptions="FillAndExpand"
                   HorizontalOptions="FillAndExpand"
                   RowSpacing="0">
-                
-                <controls:HybridWebView x:Name="HybridWebViewControl"
+
+                <pulltorefresh:PullToRefreshLayout IsPullToRefreshEnabled="{Binding IsNavigating, Converter={StaticResource BooleanInverter}}"
+                                                   RefreshCommand="{Binding PullToReloadCommand}"
+                                                   IsRefreshing="{Binding IsNavigating}"
+                                                   RefreshColor="{StaticResource PrimaryColor}">
+                    <controls:HybridWebView x:Name="HybridWebViewControl"
                                         HorizontalOptions="FillAndExpand"
                                         VerticalOptions="FillAndExpand"
                                         Source="{Binding Url, Mode=TwoWay}"
@@ -120,6 +125,9 @@
                              BackgroundColor="{DynamicResource ContentPageBackgroundColor}"
                              ProgressColor="{DynamicResource PrimaryColor}"
                              Progress="{Binding Source={x:Reference HybridWebViewControl}, Path=ContentLoadProgress}" />
+                
+                </pulltorefresh:PullToRefreshLayout>
+
             </Grid>
 
             <Grid BackgroundColor="Transparent"
