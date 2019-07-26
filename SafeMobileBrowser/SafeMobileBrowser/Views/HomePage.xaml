@@ -100,7 +100,7 @@
                   HorizontalOptions="FillAndExpand"
                   RowSpacing="0">
 
-                <pulltorefresh:PullToRefreshLayout IsPullToRefreshEnabled="{Binding IsNavigating, Converter={StaticResource BooleanInverter}}"
+                <pulltorefresh:PullToRefreshLayout IsPullToRefreshEnabled="{Binding CanRefresh}"
                                                    RefreshCommand="{Binding PullToReloadCommand}"
                                                    IsRefreshing="{Binding IsNavigating}"
                                                    RefreshColor="{StaticResource PrimaryColor}">
