@@ -192,10 +192,17 @@ namespace SafeMobileBrowser.ViewModels
                 var currentSourceUrl = ((UrlWebViewSource)Url).Url;
                 SetAddressBarText(currentSourceUrl);
             }
+            else
+            {
+                SetAddressBarText();
+            }
         }
 
-        internal void SetAddressBarText(string url)
+        internal void SetAddressBarText(string url = null)
         {
+            if (url == null)
+                url = AddressbarText;
+
             if (url.StartsWith("file://") && !IsErrorState)
             {
                 AddressbarText = string.Empty;
@@ -208,6 +215,11 @@ namespace SafeMobileBrowser.ViewModels
             else if (url.StartsWith("https://"))
             {
                 string newurlText = url.Replace("https://", string.Empty).TrimEnd('/');
+                AddressbarText = newurlText;
+            }
+            else if (url.StartsWith("http://"))
+            {
+                string newurlText = url.Replace("http://", string.Empty).TrimEnd('/');
                 AddressbarText = newurlText;
             }
         }
