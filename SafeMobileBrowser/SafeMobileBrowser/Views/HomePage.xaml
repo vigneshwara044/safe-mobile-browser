@@ -131,6 +131,8 @@
                                         android:WebView.EnableZoomControls="true"
                                         android:WebView.DisplayZoomControls="False" />
 
+                </pulltorefresh:PullToRefreshLayout>
+
                 <ProgressBar x:Name="AdvancedProgressbar"
                              IsVisible="{Binding IsNavigating}"
                              VerticalOptions="Start"
@@ -138,8 +140,6 @@
                              BackgroundColor="{DynamicResource ContentPageBackgroundColor}"
                              ProgressColor="{DynamicResource PrimaryColor}"
                              Progress="{Binding Source={x:Reference HybridWebViewControl}, Path=ContentLoadProgress}" />
-                
-                </pulltorefresh:PullToRefreshLayout>
             </Grid>
 
             <Grid BackgroundColor="Transparent"

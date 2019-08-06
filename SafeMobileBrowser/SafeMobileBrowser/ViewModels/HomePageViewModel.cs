@@ -93,12 +93,16 @@ namespace SafeMobileBrowser.ViewModels
                     CurrentUrl = CurrentTitle = $"safe://{value}";
                     CanGoToHomePage = true;
                 }
-
-                OnPropertyChanged(nameof(CanGoToHomePage));
             }
         }
 
-        public bool CanGoToHomePage { get; set; }
+        private bool _canGoToHomePage;
+
+        public bool CanGoToHomePage
+        {
+            get => _canGoToHomePage;
+            set => SetProperty(ref _canGoToHomePage, value);
+        }
 
         public string ErrorType { get; private set; }
 
