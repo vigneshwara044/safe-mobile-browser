@@ -43,8 +43,6 @@ namespace SafeMobileBrowser.ViewModels
 
         public ICommand AddressBarUnfocusCommand { get; set; }
 
-        public ICommand PullToReloadCommand { get; set; }
-
         private bool _canGoBack;
 
         public bool CanGoBack
@@ -96,21 +94,7 @@ namespace SafeMobileBrowser.ViewModels
                     CanGoToHomePage = true;
                 }
 
-                CanRefresh = string.Empty.Equals(CurrentUrl) ? false : true;
-
                 OnPropertyChanged(nameof(CanGoToHomePage));
-            }
-        }
-
-        private bool _canRefresh;
-
-        public bool CanRefresh
-        {
-            get => _canRefresh;
-
-            set
-            {
-                SetProperty(ref _canRefresh, value);
             }
         }
 
@@ -134,12 +118,6 @@ namespace SafeMobileBrowser.ViewModels
             GoToHomePageCommand = new Command(GoToHomePage);
             MenuCommand = new Command(ShowPopUpMenu);
             AddressBarUnfocusCommand = new Command(RestoreAddressBar);
-            PullToReloadCommand = new Command(PullToReload);
-        }
-
-        private void PullToReload()
-        {
-            ReloadCommand.Execute(null);
         }
 
         private void GoToHomePage()
@@ -171,7 +149,6 @@ namespace SafeMobileBrowser.ViewModels
 
             MessagingCenter.Send((App)Application.Current, MessageCenterConstants.UpdateWelcomePageTheme);
             IsNavigating = false;
-            CanRefresh = string.Empty.Equals(CurrentUrl) ? false : true;
         }
 
         private void OnNavigating(WebNavigatingEventArgs args)
@@ -180,7 +157,6 @@ namespace SafeMobileBrowser.ViewModels
             {
                 var url = args.Url;
                 SetAddressBarText(url);
-                CanRefresh = false;
 
                 if (!IsNavigating)
                     IsNavigating = true;
