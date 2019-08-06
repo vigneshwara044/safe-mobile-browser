@@ -127,7 +127,6 @@
                              Progress="{Binding Source={x:Reference HybridWebViewControl}, Path=ContentLoadProgress}" />
                 
                 </pulltorefresh:PullToRefreshLayout>
-
             </Grid>
 
             <Grid BackgroundColor="Transparent"
