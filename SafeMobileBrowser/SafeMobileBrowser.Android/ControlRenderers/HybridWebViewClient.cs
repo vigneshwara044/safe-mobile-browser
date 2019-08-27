@@ -80,7 +80,9 @@ namespace SafeMobileBrowser.Droid.ControlRenderers
                 {
                     using (var stream = new MemoryStream())
                     {
-                        var response = new WebResourceResponse("text/html", "UTF-8", stream);
+                        var urlToFetch = request.Url.ToString().Replace(Constants.BufferText, string.Empty);
+                        var mimeType = MimeTypeMap.Singleton.GetMimeTypeFromExtension(urlToFetch) ?? "text/html";
+                        var response = new WebResourceResponse(mimeType, "UTF-8", stream);
                         response.SetStatusCodeAndReasonPhrase(404, "Not Found");
                         return response;
                     }

@@ -69,9 +69,8 @@ namespace SafeMobileBrowser.WebFetchImplementation
                             ErrorConstants.NoInternetConnectionMsg);
                         break;
                     default:
-                        htmlErrorPageString = await CreateHtmlErrorPage(
-                            ErrorConstants.ErrorOccured,
-                            ex.Message);
+                        Logger.Error(ex);
+                        throw;
                         break;
                 }
 

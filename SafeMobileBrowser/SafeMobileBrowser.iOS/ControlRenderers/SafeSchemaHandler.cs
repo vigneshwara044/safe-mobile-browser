@@ -31,8 +31,10 @@ namespace SafeMobileBrowser.iOS.ControlRenderers
                 Logger.Error(ex);
                 if (ex.InnerException != null)
                 {
+                    var urlToFetch = urlSchemeTask.Request.Url.ToString();
                     var stream = new MemoryStream();
-                    var response = new NSUrlResponse(urlSchemeTask.Request.Url, "text/html", 0, null);
+                    var mimeType = MimeMapping.MimeUtility.GetMimeMapping(urlToFetch) ?? "text/html";
+                    var response = new NSUrlResponse(urlSchemeTask.Request.Url, mimeType, 0, null);
                     urlSchemeTask.DidReceiveResponse(response);
                     urlSchemeTask.DidReceiveData(NSData.FromStream(stream));
                     urlSchemeTask.DidFinish();
