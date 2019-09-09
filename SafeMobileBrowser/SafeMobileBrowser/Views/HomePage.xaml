@@ -52,6 +52,7 @@
                                               Text="{Binding AddressbarText}"
                                               TextColor="{DynamicResource SecondaryTextColor}"
                                               AddressBarFocusCommand="{Binding AddressBarFocusCommand, Mode=OneWayToSource}"
+                                              AutomationId="AddressBarEntry"
                                               ios:Entry.CursorColor="{DynamicResource PrimaryColor}">
                         <controls:AddressBarEntry.Margin>
                             <OnPlatform x:TypeArguments="Thickness">
@@ -123,6 +124,7 @@
                                         ReloadCommand="{Binding ReloadCommand}"
                                         NavigatingCommand="{Binding WebViewNavigatingCommand}"
                                         NavigatedCommand="{Binding WebViewNavigatedCommand}"
+                                        AutomationId="HybridWebView"
                                         android:WebView.EnableZoomControls="true"
                                         android:WebView.DisplayZoomControls="False" />
 
@@ -168,6 +170,7 @@
                                       xamEffect:Commands.Tap="{Binding BottomNavbarTapCommand}"
                                       xamEffect:Commands.TapParameter="Back">
                     <Label Style="{DynamicResource BottomNavigationIconStyle}"
+                           AutomationId="BackActionIcon"
                            Text="{x:Static icons:IconFont.ChevronLeft}" />
                 </xamEffect:BorderView>
 
@@ -179,6 +182,7 @@
                                       xamEffect:Commands.TapParameter="Forward"
                                       xamEffect:TouchEffect.Color="LightGray">
                     <Label Style="{DynamicResource BottomNavigationIconStyle}"
+                           AutomationId="ForwardActionIcon"
                            Text="{x:Static icons:IconFont.ChevronRight}" />
                 </xamEffect:BorderView>
 
@@ -188,6 +192,7 @@
                                       xamEffect:Commands.Tap="{Binding BottomNavbarTapCommand}"
                                       xamEffect:Commands.TapParameter="Focus">
                     <Label Style="{DynamicResource BottomNavigationIconStyle}"
+                           AutomationId="FocusActionIcon"
                            Text="{x:Static icons:IconFont.Magnify}" />
                 </xamEffect:BorderView>
 
@@ -199,6 +204,7 @@
                                       xamEffect:Commands.TapParameter="Home">
 
                     <Label Style="{DynamicResource BottomNavigationIconStyle}"
+                           AutomationId="HomeActionIcon"
                            Text="{x:Static icons:IconFont.Home}" />
                 </xamEffect:BorderView>
 
@@ -208,6 +214,7 @@
                                       xamEffect:Commands.Tap="{Binding BottomNavbarTapCommand}"
                                       xamEffect:Commands.TapParameter="Menu">
                     <Label Style="{DynamicResource BottomNavigationIconStyle}"
+                           AutomationId="MenuActionIcon"
                            Text="{x:Static icons:IconFont.DotsVertical}" />
                 </xamEffect:BorderView>
             </Grid>
