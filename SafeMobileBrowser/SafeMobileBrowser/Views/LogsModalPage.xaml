@@ -51,6 +51,7 @@
                            Style="{StaticResource ModalPageTitleLabelStyle}" />
                     
                     <Label Style="{DynamicResource TopNavigationIconStyle}"
+                           AutomationId="Delete All logs"
                            Text="{x:Static icons:IconFont.Delete}">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding DeleteAllLogFileCommand}" />

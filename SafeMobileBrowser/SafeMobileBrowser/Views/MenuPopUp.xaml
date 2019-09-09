@@ -55,7 +55,7 @@
             <Setter Property="FontSize"
                     Value="25" />
         </Style>
-        
+
         <Style x:Key="PopUpBottomMenubarIconFrameStyle"
                TargetType="xamEffect:BorderView"
                BasedOn="{StaticResource BottomMenubarIconFrameStyle}">
@@ -83,6 +83,7 @@
                         <DataTemplate>
                             <Grid Style="{StaticResource PopupMenuItemGridStyle}"
                                   IsEnabled="{Binding IsEnabled}"
+                                  AutomationId="PopMenuItems"
                                   xamEffect:Commands.Tap="{Binding Source={x:Reference MenuPopUpPage}, Path=BindingContext.PopupMenuItemTappedCommand}"
                                   xamEffect:Commands.TapParameter="{Binding MenuItemTitle}"
                                   xamEffect:TouchEffect.Color="{DynamicResource SecondaryGrayColor}">
@@ -129,7 +130,7 @@
                                           Style="{StaticResource PopUpBottomMenubarIconFrameStyle}"
                                           xamEffect:Commands.Tap="{Binding ManageBookmarkCommand}">
                         <Label Style="{DynamicResource PopUpBottomMenuBarIconStyle}"
-                               Text="{Binding BookmarkMenuItem.MenuItemIcon}"/>
+                               Text="{Binding BookmarkMenuItem.MenuItemIcon}" />
                     </xamEffect:BorderView>
                 </StackLayout>
             </StackLayout>

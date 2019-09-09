@@ -196,6 +196,7 @@
                                       xamEffect:Commands.Tap="{Binding BottomNavbarTapCommand}"
                                       xamEffect:Commands.TapParameter="Menu">
                     <Label Style="{DynamicResource BottomNavigationIconStyle}"
+                           AutomationId="MenuActionIcon"
                            Text="{x:Static icons:IconFont.DotsVertical}" />
                 </xamEffect:BorderView>
             </Grid>
