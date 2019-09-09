@@ -55,7 +55,7 @@
             <Setter Property="FontSize"
                     Value="25" />
         </Style>
-        
+
         <Style x:Key="PopUpBottomMenubarIconFrameStyle"
                TargetType="xamEffect:BorderView"
                BasedOn="{StaticResource BottomMenubarIconFrameStyle}">
@@ -121,7 +121,6 @@
                                           WidthRequest="80"
                                           HorizontalOptions="CenterAndExpand">
                         <Label Style="{DynamicResource PopUpBottomMenuBarIconStyle}"
-                               AutomationId="ReloadActionIcon"
                                Text="{Binding ReloadMenuItem.MenuItemIcon}" />
                     </xamEffect:BorderView>
 
@@ -130,8 +129,7 @@
                                           Style="{StaticResource PopUpBottomMenubarIconFrameStyle}"
                                           xamEffect:Commands.Tap="{Binding ManageBookmarkCommand}">
                         <Label Style="{DynamicResource PopUpBottomMenuBarIconStyle}"
-                               AutomationId="BookmarkActionIcon"
-                               Text="{Binding BookmarkMenuItem.MenuItemIcon}"/>
+                               Text="{Binding BookmarkMenuItem.MenuItemIcon}" />
                     </xamEffect:BorderView>
                 </StackLayout>
             </StackLayout>
