@@ -16,8 +16,8 @@ namespace SafeMobileBrowser.UITests
         static readonly Func<AppQuery, AppQuery> FocusActionIcon = c => c.Marked("FocusActionIcon");
         static readonly Func<AppQuery, AppQuery> MenuActionIcon = c => c.Marked("MenuActionIcon");
         static readonly Func<AppQuery, AppQuery> SettingsPageIcon = c => c.Marked("NoResourceEntry-24");
-        static readonly Func<AppQuery, AppQuery> AppLogsLabel = c => c.Marked("NoResourceEntry - 37");
-        static readonly Func<AppQuery, AppQuery> DeleteAllAppLogsIcon = c => c.Id("Delete All logs");
+        static readonly Func<AppQuery, AppQuery> AppLogsLabel = c => c.Marked("NoResourceEntry-37");
+        static readonly Func<AppQuery, AppQuery> DeleteAllAppLogsIcon = c => c.Marked("NoResourceEntry-47");
         static readonly Func<AppQuery, AppQuery> FaqLabel = c => c.Marked("NoResourceEntry-39");
         static readonly Func<AppQuery, AppQuery> PrivacyStatementLabel = c => c.Marked("NoResourceEntry-40");
 
@@ -41,14 +41,19 @@ namespace SafeMobileBrowser.UITests
         }
 
         [Test]
-        public void SettingsPageTest()
+        public void FAQLinkTest()
         {
             app.Tap(MenuActionIcon);
-            app.Repl();
-
-            // Opening Settings Page
             app.Tap(SettingsPageIcon);
             app.Tap(FaqLabel);
+        }
+
+        [Test]
+        public void PrivacyStatementLinkTest()
+        {
+            app.Tap(MenuActionIcon);
+            app.Tap(SettingsPageIcon);
+            app.Tap(PrivacyStatementLabel);
         }
 
         [Test]
