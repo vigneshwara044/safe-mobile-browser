@@ -35,14 +35,6 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SafeMobileBrowser\SafeMobileBrowser.Android\SafeMobileBrowser.Android.csproj">
-      <Project>{c08921ad-3155-42c3-bcdc-001f785e93a4}</Project>
-      <Name>SafeMobileBrowser.Android</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SafeMobileBrowser\SafeMobileBrowser.iOS\SafeMobileBrowser.iOS.csproj">
-      <Project>{57fe94f9-50c7-46ed-9d5b-454d7b2976c0}</Project>
-      <Name>SafeMobileBrowser.iOS</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SafeMobileBrowser\SafeMobileBrowser\SafeMobileBrowser.csproj">
       <Project>{6acb7ee7-dd48-4e79-ab5b-c1492bdcc349}</Project>
       <Name>SafeMobileBrowser</Name>

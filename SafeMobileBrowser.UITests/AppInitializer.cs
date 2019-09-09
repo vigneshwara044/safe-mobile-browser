@@ -1,7 +1,4 @@
-﻿using System;
-using Xamarin;
-using Xamarin.UITest;
-using Xamarin.UITest.Queries;
+﻿using Xamarin.UITest;
 
 namespace SafeMobileBrowser.UITests
 {
