@@ -1,6 +1,4 @@
 ﻿using System;
-using System.IO;
-using System.Linq;
 using NUnit.Framework;
 using Xamarin.UITest;
 using Xamarin.UITest.Queries;
@@ -15,8 +13,7 @@ namespace SafeMobileBrowser.UITests
         Platform platform;
 
         static readonly Func<AppQuery, AppQuery> AddressBarEntry = c => c.Marked("AddressBarEntry");
-        static readonly Func<AppQuery, AppQuery> HomeActionIcon = c => c.Marked("HomeActionIcon");
-        static readonly Func<AppQuery, AppQuery> HyrbidWebView = c => c.Marked("HyrbidWebView").Property("Source").Like("hello");
+        static readonly Func<AppQuery, AppQuery> FocusActionIcon = c => c.Marked("FocusActionIcon");
 
         public Tests(Platform platform)
         {
@@ -30,17 +27,11 @@ namespace SafeMobileBrowser.UITests
         }
 
         [Test]
-        public void WelcomeTextIsDisplayed()
+        public void AddressBarFocusTest()
         {
-            // AppResult[] results = app.WaitForElement(c => c.Marked("Welcome to Xamarin.Forms!"));
-            // app.Screenshot("Welcome screen.");
-
-            AppResult[] result = app.Query(AddressBarEntry);
-            AppResult[] result2 = app.Query(HyrbidWebView);
-            Assert.AreEqual(result.Any(), result2.Any());
-            app.Tap(HomeActionIcon);
-            result2 = app.Query(HyrbidWebView);
-            Assert.IsTrue(result2.Any(), "The home page is not being displayed");
+            app.Tap(FocusActionIcon);
+            AppResult[] result1 = app.Query(AddressBarEntry);
+            app.EnterText(AddressBarEntry, "hello");
         }
     }
 }

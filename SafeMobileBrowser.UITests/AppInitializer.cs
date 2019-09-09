@@ -1,7 +1,4 @@
-﻿using System;
-using Xamarin;
-using Xamarin.UITest;
-using Xamarin.UITest.Queries;
+﻿using Xamarin.UITest;
 
 namespace SafeMobileBrowser.UITests
 {
@@ -11,7 +8,10 @@ namespace SafeMobileBrowser.UITests
         {
             if (platform == Platform.Android)
             {
-                return ConfigureApp.Android.StartApp();
+                return ConfigureApp
+                    .Android
+                    .InstalledApp("net.maidsafe.browser")
+                    .StartApp();
             }
 
             return ConfigureApp.iOS.StartApp();
