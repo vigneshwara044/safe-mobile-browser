@@ -88,6 +88,7 @@
                         <Label Text="App logs"
                                Margin="16,0"
                                Style="{StaticResource ItemStyle}"
+                               AutomationId="App logs"
                                VerticalOptions="CenterAndExpand" />
                     </StackLayout>
                 </StackLayout>
@@ -106,6 +107,7 @@
                         <Label Text="FAQs"
                                Margin="16,0"
                                Style="{StaticResource ItemStyle}"
+                               AutomationId="FAQs"
                                VerticalOptions="CenterAndExpand" />
                     </StackLayout>
 
@@ -116,6 +118,7 @@
                         <Label Text="Privacy statement"
                                Margin="16,0"
                                Style="{StaticResource ItemStyle}"
+                               AutomationId="Privacy Statement"
                                VerticalOptions="CenterAndExpand" />
                     </StackLayout>
 
