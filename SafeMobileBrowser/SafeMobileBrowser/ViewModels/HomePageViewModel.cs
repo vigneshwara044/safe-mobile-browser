@@ -155,7 +155,6 @@ namespace SafeMobileBrowser.ViewModels
             }
 
             MessagingCenter.Send((App)Application.Current, MessageCenterConstants.UpdateWelcomePageTheme);
-            
             if (obj.NavigationEvent == WebNavigationEvent.Refresh)
                 IsRefreshing = false;
 
