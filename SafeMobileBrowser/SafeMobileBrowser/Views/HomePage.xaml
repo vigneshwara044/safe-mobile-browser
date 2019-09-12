@@ -100,14 +100,13 @@
                   HorizontalOptions="FillAndExpand"
                   RowSpacing="0">
 
-                <pulltorefresh:PullToRefreshLayout IsPullToRefreshEnabled="False"
-                                                   RefreshCommand="{Binding Source={x:Reference HybridWebViewControl}, Path=ReloadCommand}"
+                <pulltorefresh:PullToRefreshLayout RefreshCommand="{Binding Source={x:Reference HybridWebViewControl}, Path=ReloadCommand}"
                                                    IsRefreshing="{Binding IsRefreshing}"
                                                    RefreshColor="{StaticResource PrimaryColor}">
                     <pulltorefresh:PullToRefreshLayout.Triggers>
                         <DataTrigger TargetType="pulltorefresh:PullToRefreshLayout"
                                      Binding="{Binding CanGoToHomePage}"
-                                     Value="false">
+                                     Value="False">
                             <Setter Property="IsEnabled"
                                     Value="False" />
                         </DataTrigger>
