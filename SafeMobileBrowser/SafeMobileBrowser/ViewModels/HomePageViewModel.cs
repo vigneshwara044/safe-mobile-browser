@@ -93,15 +93,18 @@ namespace SafeMobileBrowser.ViewModels
                     CurrentUrl = CurrentTitle = $"safe://{value}";
                     CanGoToHomePage = true;
                 }
+                OnPropertyChanged(nameof(CanGoToHomePage));
             }
         }
 
-        private bool _canGoToHomePage;
+        public bool CanGoToHomePage { get; set; }
 
-        public bool CanGoToHomePage
+        private bool _isRefreshing;
+
+        public bool IsRefreshing
         {
-            get => _canGoToHomePage;
-            set => SetProperty(ref _canGoToHomePage, value);
+            get => _isRefreshing;
+            set => SetProperty(ref _isRefreshing, value);
         }
 
         public string ErrorType { get; private set; }
@@ -152,6 +155,10 @@ namespace SafeMobileBrowser.ViewModels
             }
 
             MessagingCenter.Send((App)Application.Current, MessageCenterConstants.UpdateWelcomePageTheme);
+            
+            if (obj.NavigationEvent == WebNavigationEvent.Refresh)
+                IsRefreshing = false;
+
             IsNavigating = false;
         }
 
@@ -164,6 +171,9 @@ namespace SafeMobileBrowser.ViewModels
 
                 if (!IsNavigating)
                     IsNavigating = true;
+
+                if (args.NavigationEvent == WebNavigationEvent.Refresh && CurrentUrl != args.Url.Replace("https", "safe"))
+                    IsRefreshing = true;
             }
             catch (Exception ex)
             {

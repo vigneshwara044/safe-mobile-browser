@@ -102,21 +102,17 @@
 
                 <pulltorefresh:PullToRefreshLayout IsPullToRefreshEnabled="False"
                                                    RefreshCommand="{Binding Source={x:Reference HybridWebViewControl}, Path=ReloadCommand}"
-                                                   IsRefreshing="False"
+                                                   IsRefreshing="{Binding IsRefreshing}"
                                                    RefreshColor="{StaticResource PrimaryColor}">
                     <pulltorefresh:PullToRefreshLayout.Triggers>
-                        <MultiTrigger TargetType="pulltorefresh:PullToRefreshLayout">
-                            <MultiTrigger.Conditions>
-                                <BindingCondition Binding="{Binding CanGoToHomePage}"
-                                                  Value="True" />
-                                <BindingCondition Binding="{Binding IsNavigating}"
-                                                  Value="False" />
-                            </MultiTrigger.Conditions>
-                            <Setter Property="IsPullToRefreshEnabled"
-                                    Value="True" />
-                        </MultiTrigger>
+                        <DataTrigger TargetType="pulltorefresh:PullToRefreshLayout"
+                                     Binding="{Binding CanGoToHomePage}"
+                                     Value="false">
+                            <Setter Property="IsEnabled"
+                                    Value="False" />
+                        </DataTrigger>
                     </pulltorefresh:PullToRefreshLayout.Triggers>
-                    
+
                     <controls:HybridWebView x:Name="HybridWebViewControl"
                                         HorizontalOptions="FillAndExpand"
                                         VerticalOptions="FillAndExpand"
