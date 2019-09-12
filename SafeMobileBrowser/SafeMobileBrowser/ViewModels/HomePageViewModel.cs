@@ -171,7 +171,7 @@ namespace SafeMobileBrowser.ViewModels
                 if (!IsNavigating)
                     IsNavigating = true;
 
-                if (args.NavigationEvent == WebNavigationEvent.Refresh && CurrentUrl != args.Url.Replace("https", "safe"))
+                if (args.NavigationEvent == WebNavigationEvent.Refresh && CurrentUrl != args.Url.Replace("https://", "safe://"))
                     IsRefreshing = true;
             }
             catch (Exception ex)
