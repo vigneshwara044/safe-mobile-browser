@@ -10,7 +10,7 @@ namespace SafeMobileBrowser.UITests
             {
                 return ConfigureApp
                     .Android
-                    .ApkFile("net.maidsafe.browser.apk")
+                    .InstalledApp("net.maidsafe.browser")
                     .StartApp();
             }
 

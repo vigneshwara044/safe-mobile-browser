@@ -33,12 +33,6 @@
     <PackageReference Include="NUnitTestAdapter" Version="2.1.1" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SafeMobileBrowser\SafeMobileBrowser\SafeMobileBrowser.csproj">
-      <Project>{6acb7ee7-dd48-4e79-ab5b-c1492bdcc349}</Project>
-      <Name>SafeMobileBrowser</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Tests.cs" />
     <Compile Include="AppInitializer.cs" />
   </ItemGroup>
