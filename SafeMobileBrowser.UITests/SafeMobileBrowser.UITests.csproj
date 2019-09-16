@@ -33,12 +33,15 @@
     <PackageReference Include="Xamarin.UITest">
       <Version>3.0.3</Version>
     </PackageReference>
+<<<<<<< HEAD
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SafeMobileBrowser\SafeMobileBrowser\SafeMobileBrowser.csproj">
       <Project>{6acb7ee7-dd48-4e79-ab5b-c1492bdcc349}</Project>
       <Name>SafeMobileBrowser</Name>
     </ProjectReference>
+=======
+>>>>>>> iOS UI Test Setup
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Tests.cs" />

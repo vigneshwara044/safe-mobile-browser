@@ -11,11 +11,7 @@ namespace SafeMobileBrowser.UITests
             {
                 return ConfigureApp
                     .Android
-<<<<<<< HEAD
                     .InstalledApp(packageIdentifier)
-=======
-                    .InstalledApp("net.maidsafe.browser")
->>>>>>> use installed app and remove unwanted reference
                     .StartApp();
             }
 
