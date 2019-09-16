@@ -6,15 +6,19 @@ namespace SafeMobileBrowser.UITests
     {
         public static IApp StartApp(Platform platform)
         {
+            var packageIdentifier = "net.maidsafe.browser";
             if (platform == Platform.Android)
             {
                 return ConfigureApp
                     .Android
-                    .InstalledApp("net.maidsafe.browser")
+                    .InstalledApp(packageIdentifier)
                     .StartApp();
             }
 
-            return ConfigureApp.iOS.StartApp();
+            return ConfigureApp
+                .iOS
+                .InstalledApp(packageIdentifier)
+                .StartApp();
         }
     }
 }
