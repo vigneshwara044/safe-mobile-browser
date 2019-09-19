@@ -1,4 +1,20 @@
 # Xamarin.Android
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |
+      #Config Android
+      export CURRENT_HOME=$PWD
+      export ANDROID_HOME=/Users/$(whoami)/Library/Android/sdk
+      $ANDROID_HOME/tools/bin/sdkmanager "system-images;android-28;google_apis_playstore;x86_64" --no_https > nul
+      
+      #Config iOS
+      sudo xcode-select -switch /Applications/Xcode_10.1.app/Contents/Developer
+      
+      #Run cake script
+      cd CakeScripts
+      chmod +x build.sh
+      ./build.sh --settings_skipverification=true
 # Build a Xamarin.Android project.
 # Add steps that test, sign, and distribute an app, save build artifacts, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/xamarin
