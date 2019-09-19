@@ -1,5 +1,7 @@
-﻿using NUnit.Framework;
+﻿using System;
+using NUnit.Framework;
 using Xamarin.UITest;
+using Xamarin.UITest.Queries;
 
 namespace SafeMobileBrowser.UITests
 {
@@ -9,6 +11,9 @@ namespace SafeMobileBrowser.UITests
     {
         IApp app;
         Platform platform;
+
+        static readonly Func<AppQuery, AppQuery> FocusActionIcon = c => c.Marked("FocusActionIcon");
+
         public Tests(Platform platform)
         {
             this.platform = platform;
@@ -18,6 +23,12 @@ namespace SafeMobileBrowser.UITests
         public void BeforeEachTest()
         {
             app = AppInitializer.StartApp(platform);
+        }
+
+        [Test]
+        public void LaunchTest()
+        {
+            app.Tap(FocusActionIcon);
         }
     }
 }
