@@ -188,6 +188,7 @@
                                       xamEffect:Commands.Tap="{Binding BottomNavbarTapCommand}"
                                       xamEffect:Commands.TapParameter="Focus">
                     <Label Style="{DynamicResource BottomNavigationIconStyle}"
+                           AutomationId="FocusActionIcon"
                            Text="{x:Static icons:IconFont.Magnify}" />
                 </xamEffect:BorderView>
 
