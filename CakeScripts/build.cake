@@ -69,7 +69,7 @@ Task("Android-UITest")
         }
         var emu = StartAndReturnProcess(emulatorPath, new ProcessSettings
         {
-            Arguments = $"-avd {ANDROID_AVD} -no-audio -timezone Europe/Paris  -no-boot-anim & adb wait-for-device"
+            Arguments = $"-avd {ANDROID_AVD} -no-audio -timezone Europe/Paris  -no-boot-anim"
         });
         var adbSettings = new AdbToolSettings { SdkRoot = ANDROID_HOME };
 
