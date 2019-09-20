@@ -121,8 +121,8 @@ Task("Android-UITest")
     Information(exception.Message);
 });
 
-var IOS_SIM_NAME = "iPhone Xs Max";
-var IOS_SIM_RUNTIME = "com.apple.CoreSimulator.SimRuntime.iOS-12-4";
+var IOS_SIM_NAME = "iPhone XS Max";
+var IOS_SIM_RUNTIME = "iOS 12.4";
 var IOS_PROJ = "../SafeMobileBrowser/SafeMobileBrowser.iOS/SafeMobileBrowser.iOS.csproj";
 var IOS_BUNDLE_ID = "net.maidsafe.browser";
 var IOS_IPA_PATH = "../SafeMobileBrowser/SafeMobileBrowser.iOS/bin/iPhoneSimulator/Debug/SafeMobileBrowser.iOS.app";
