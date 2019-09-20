@@ -15,7 +15,7 @@ var TEST_DLL_FILE_PATH = "../SafeMobileBrowser.UITests/bin/Release/SafeMobileBro
 Task("Default")
   .IsDependentOn("Restore-NuGet-Packages")
   .IsDependentOn("Rebuild-UITest")
-  .IsDependentOn("Android-UITest")
+  //.IsDependentOn("Android-UITest")
   .IsDependentOn("iOS-UITest")
   .Does(() =>{ });
 
